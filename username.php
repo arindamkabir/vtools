@@ -35,6 +35,8 @@ if (isset(v::$a["_check"])) {
 	if (vAllowed($Tribe)) {
 		$Q = vQ("update tribes set username='".$Username."' where id='".$Tribe."';");
 		v::$r = vR(200, "Update username to ".$Username." in tribe ".$Tribe." with response: ".vPR($Q));
+		// BACKLOG: Need to clean up or reconcile all data references to previous username
+
 	} else {
 		v::$r = vR(500, v::$v["uid"]." attempted to update username to ".$Username." in tribe ".$Tribe);
 	}
