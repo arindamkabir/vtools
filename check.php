@@ -18,7 +18,7 @@ if (strlen(v::$v["sid"]) > 20) {
 	v::$r = array("tribe" => false);
 }
 
-if (v::$v["uid"] == "j" || v::$v["uid"] == "j") {
+if (v::$v["uid"] == "j" || v::$v["uid"] == "jw" || v::$v["uid"] == "jeremy") {
 	v::$r["u"] = v::$u;
 	v::$r["t"] = v::$t;
 	v::$r["v"] = v::$v;
