@@ -26,7 +26,7 @@ if (isset(v::$a["_check"])) {
 	vLog("Check if username exists");
 	if (strlen(v::$v["sid"]) > 20 && strlen($Username) >= 8) {
 		// Must be logged in to check
-		$Q = vQ1("select id from tribes where username='".$Username."';");
+		$Q = vQ1("select id from tribes where lower(username)=lower('".$Username."');");
 		vLog($Q);
 		v::$r = $Q;
 	}
