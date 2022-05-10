@@ -1,0 +1,9 @@
+/getAssets/?chain=MATIC&wallet=0xABC123
+Response Body:
+- [ {
+- "contract":"CONTRACT_ADDRESS",
+- "
+- } ]
+
+Link Ticket to Event on-chain?
+Flag Ticket as "used" on-chain?
