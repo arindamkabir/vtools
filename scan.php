@@ -1,5 +1,7 @@
 <?php
 // scan
+//
+// https://www.ocavu.net/scan/?time=\(time)&id=\(id)&tribe=\(tribe)
 
 // Kernel is always loaded by dispatch
 

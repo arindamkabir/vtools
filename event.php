@@ -3,7 +3,7 @@
 /*
 {
 "_tribe":"event1",
-"username":"event-id-00000001",
+"token":"event-id-00000001",
 "name":"The Big Reveal x Ocavu",
 "description":"Join the team in launching our next billion dollar venture. The Big Reveal, one night only, be there or be square, YOLO.",
 "media":"https://www.ocavu.net/cdn/v/anon.png",

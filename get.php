@@ -10,6 +10,9 @@ $Tribe = null;
 if (isset(v::$a["_tribe"])) {
         $Tribe = vClean(v::$a["_tribe"]);
         unset(v::$a["_tribe"]);
+} else if (isset(v::$a["tribe"])) {
+	$Tribe = vClean(v::$a["tribe"]);
+	unset(v::$a["tribe"]);
 }
 
 vDBConnect();

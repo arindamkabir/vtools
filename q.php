@@ -25,7 +25,7 @@ if (v::$v["uid"] == "j" || v::$v["uid"] == "jw" || v::$v["uid"] == "rangers") {
 			"phone" => vCleanPhone($Row["phone"]),
 			"email" => $Row["email"],
 			"emailverified" => "no",
-			"username" => strstr($Row["email"], "@", true),
+			"token" => strstr($Row["email"], "@", true),
 			"context" => $T,
 			"type" => "user",
 			"name" => $Row["name"],

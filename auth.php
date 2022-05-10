@@ -114,12 +114,12 @@ vLog("Tribe exists ".v::$v["uid"]);
 					}
 					v::$v["tribe"] = v::$v["uid"]; // Tribe context is user tribe for new users
 					// Populate new user tribe's system data
-					$Username = v::$v["uid"];
+					$Token = v::$v["uid"];
 					$Data = array(
 						"id" => v::$v["uid"],
 						"phonecountry" => $Country,
 						"phone" => $Auth,
-						"username" => $Username,
+						"token" => $Token,
 						"type" => "user"
 					);
 					if ( vIsEmail($Email) ) {

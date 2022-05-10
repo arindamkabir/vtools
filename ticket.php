@@ -38,8 +38,8 @@ if (isset(v::$a["_time"])) {
 if (strlen(v::$v["sid"]) > 20) {
 	// Logged in
 	vDBConnect();
-	$T = vQ1("select * from tribes where username='".$Token."';");
-	if (isset($T["username"])) { // Username is token id
+	$T = vQ1("select * from tribes where token='".$Token."';");
+	if (isset($T["token"])) {
 		// Token exists
 		for($i = 0; $i < 10; $i++) {
 			$ID[] = vGUID();
