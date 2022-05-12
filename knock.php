@@ -60,9 +60,11 @@ if ( strlen($Auth) < 5 ) {
 
 	if ( vTribeExists($Q["id"]) ) {
 		v::$v["tribe"] = $Q["id"];
+		$Email = $Q["email"];
 		// BACKLOG: Do stuff for returning user
 
 	} else {
+		$Email = vCleanEmail(v::$a["email"]);
 		// BACKLOG: Do stuff for a new user
 		
 vLog("Tribe doees not exists for ".$Type.": ".$Auth);
@@ -107,6 +109,7 @@ vLog("Insert minutes");
 			// BACKLOG: Option to send a login image with SMS
 
 			vTxt($Country, $Auth, $M);
+			vSendMail($Email, "Authorization Code: ".$Code, $M);
 
 			v::$r = array(
 				"country" => $Country,

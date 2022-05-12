@@ -109,7 +109,7 @@ vLog("Tribe exists ".v::$v["uid"]);
 					v::$t = vQ1("select * from tribes where id='".v::$v["tribe"]."';");
 				} else {
 					// Create new user tribe
-					if (strlen(v::$v["uid"]) < 21) {
+					if (strlen(v::$v["uid"]) < 1) {
 						v::$v["uid"] = vGUID();
 					}
 					v::$v["tribe"] = v::$v["uid"]; // Tribe context is user tribe for new users
@@ -120,6 +120,7 @@ vLog("Tribe exists ".v::$v["uid"]);
 						"phonecountry" => $Country,
 						"phone" => $Auth,
 						"token" => $Token,
+						"optin" => vTime(),
 						"type" => "user"
 					);
 					if ( vIsEmail($Email) ) {
