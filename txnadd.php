@@ -3,7 +3,7 @@
 // adds transaction to db
 // response - the response from api or tools call
 // org - the org from which the call was made
-// type - either "vapi" or "vdo" depending on the function making the call and thus the endpoint being called
+// type - "vdo"/"chain"/"pay"/"payout"/"comment"/"txt"/"email"/"scan"
 // change table name from txn_test1 to txn in production.
 
 // Also need Visyfy core functions
