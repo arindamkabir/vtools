@@ -20,7 +20,7 @@ if (
     isset(v::$a["org"]) &&
     isset(v::$a["type"])
 ) {
-    $response = vJSONarray(v::$a["response"], true);
+    $response = vJSONarray(v::$a["response"]);
     $response['endpoint'] = v::$a["endpoint"];
     $org = v::$a["org"];
     $type = v::$a["type"];
