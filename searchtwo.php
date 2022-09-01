@@ -20,7 +20,7 @@ if (isset(v::$a["term"]) && strlen($Org) > 0) {
 
     vDBConnect();
     // BACKLOG: Omit tribes with type ~ _question
-    $Q = vQ("select id, token, name, description, media, mediacdn, meta, type from tribes where " . $vType . " ( lower(name) ~ '" . $Term . "' or lower(description) ~ '" . $Term . "' or lower(token) ~ '" . $Term . "' or lower(meta->>'name') ~ '" . $Term . "' or ts_meta @@ plainto_tsquery('English', '" . $Term . "') ) limit 500 ;");
+    $Q = vQ("select id, token, name, description, media, mediacdn, meta, type from tribes where " . $vType . " ( lower(name) ~ '" . $Term . "' or lower(description) ~ '" . $Term . "' or lower(token) ~ '" . $Term . "' or lower(meta->>'name') ~ '" . $Term . "' or (meta->>'revealed'='true' and (lower(meta->'reveal_json'->>'name') ~ '" . $Term . "')) or ts_meta @@ plainto_tsquery('English', '" . $Term . "') ) limit 500 ;");
 
     if (count($Q) === 1 && empty($Q[0])) {
         v::$r = vR(200, "No results found.");
@@ -32,5 +32,3 @@ if (isset(v::$a["term"]) && strlen($Org) > 0) {
 } else {
     v::$r = vR(300, "No search term or org specified.");
 }
-
-$blh = "select id, token, name, description, media, mediacdn, meta, type from tribes where (type='CougsNFT_asset' or type='user') and ( lower(name) ~ 'puka' or lower(description) ~ 'puka' or lower(token) ~ 'puka' or lower(meta->>'name') ~ 'puka' or ts_meta @@ plainto_tsquery('English', 'puka') ) limit 500 ;";
